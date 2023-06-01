@@ -1,0 +1,18 @@
+<h1>Nouvel email</h1>
+
+<%= form_with model: Email.new, url: emails_path do |form| %>
+  <div>
+    <%= form.label :address, 'Email' %>
+    <%= form.text_field :address %>
+  </div>
+  <div>
+    <%= form.label :object, 'Object' %>
+    <%= form.text_field :object %>
+  </div>
+  <div>
+    <%= form.label :body, 'Body' %>
+    <%= form.text_area :body %>
+  </div>
+  <%= form.submit 'Create' %>
+<% end %>
+

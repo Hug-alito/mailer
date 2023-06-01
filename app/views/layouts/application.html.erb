@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Email Viewer</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Accueil', root_path %></li>
+          <li><%= link_to 'Mes mails', emails_path %></li>
+          <li><%= link_to 'Mon compte', edit_user_registration_path %></li>
+          <li><%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Accueil', root_path %></li>
+          <li><%= link_to 'Se connecter', new_user_session_path %></li>
+          <li><%= link_to "S'inscrire", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

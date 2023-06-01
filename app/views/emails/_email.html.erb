@@ -1,0 +1,15 @@
+<% @emails.each do |email| %>
+  <div>
+    <strong>Email:</strong>
+    <%= email.address %>
+  </div>
+  <div>
+    <strong>Object:</strong>
+    <%= email.object %>
+  </div>
+  <div>
+    <strong>Body:</strong>
+    <%= email.body %>
+  </div>
+  <hr>
+<% end %>

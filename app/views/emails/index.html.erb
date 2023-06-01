@@ -1,0 +1,11 @@
+<h1>Email Viewer</h1>
+
+<%= button_to 'Recevoir un email', emails_path, method: :post %>
+
+<h1>Liste des emails</h1>
+
+<%=
+  turbo_frame_tag 'email_list' do
+    render partial: 'email'
+  end
+%>
